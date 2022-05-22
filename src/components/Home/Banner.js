@@ -2,8 +2,8 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div>
-            <h2>This is banner</h2>
+        <div className='h-screen flex justify-center items-center bg-black'>
+            <h2 className='text-white'>This is banner</h2>
         </div>
     );
 };

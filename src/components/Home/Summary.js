@@ -2,8 +2,8 @@ import React from 'react';
 
 const Summary = () => {
     return (
-        <div>
-            <h2>This is summary section</h2>
+        <div className='h-20'>
+            <h2 className='text-center'>This is summary section</h2>
         </div>
     );
 };
