@@ -21,6 +21,7 @@ import AddProduct from './components/Dashboard/AddProduct';
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AllTools from './components/AllTools';
 
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
           <Route path ='addProduct' element={<AddProduct></AddProduct>}></Route>
         </Route>
         <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
-        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/allproducts' element={<AllTools></AllTools>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
       </Routes>
       <ToastContainer position="bottom-right"></ToastContainer>

@@ -1,9 +1,10 @@
 import React from 'react';
+import AllTools from './AllTools';
 
 const Shop = () => {
     return (
         <div>
-            <h2>This is shop section</h2>
+            <AllTools></AllTools>
         </div>
     );
 };

@@ -71,7 +71,7 @@ const AddProduct = () => {
             </span>
           )}
           <input
-            className="input w-full max-w-xs input-bordered mb-2 input-success"
+            className="textarea w-full max-w-xs input-bordered mb-2 input-success"
             type="text"
             placeholder="Product description"
             {...register("description", { required: true })}
