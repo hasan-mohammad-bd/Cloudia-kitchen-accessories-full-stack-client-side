@@ -1,48 +1,68 @@
-import React from 'react';
-import Loading from '../Loading';
-import ListOfTools from './ListOfTools';
-import {
-    useQuery,
-  } from 'react-query';
+import React from "react";
+import Loading from "../Loading";
+import ListOfTools from "./ListOfTools";
+import { useState } from "react";
+import { useQuery } from "react-query";
+import DeleteConfirmModal from "./DeleteConfirmModal";
 
 const ManageProduct = () => {
-    const {data:tools, isLoading, refetch} = useQuery('product', ()=> fetch('http://localhost:5000/product').then(res => res.json()))
+  const [deletingProduct, setDeletingProduct] = useState(null);
+  const {
+    data: tools,
+    isLoading,
+    refetch,
+  } = useQuery("product", () =>
+    fetch("http://localhost:5000/product",{
+        method: 'GET',
+        headers:{
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then((res) => res.json())
+  );
 
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
 
-    if(isLoading){
-        return <Loading></Loading>
-    }
-    console.log(tools);
+  console.log(tools);
 
-    return (
-        <div className='h-20'>
-            <h2 className='text-center'>Our all Kitchen Tools</h2>
-            <div>
-            <div class="overflow-x-auto">
-      <table class="table w-full">
-        {/* <!-- head --> */}
-        <thead>
-          <tr>
-            <th></th>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Available Quantity</th>
-            <th>Price</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* <!-- row 1 --> */}
-          {
-                    tools.reverse().map((tool,index) => <ListOfTools tool={tool} key={tool._id} index={index} refetch={refetch}></ListOfTools>)
-                }
-        </tbody>
-      </table>
-    </div>
-
-            </div>
+  return (
+    <div className="h-20">
+      <h2 className="text-center text-2xl mb-5">All Kitchen Tools</h2>
+      <div>
+        <div class="overflow-x-auto">
+          <table class="table w-full">
+            {/* <!-- head --> */}
+            <thead>
+              <tr>
+                <th></th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Available Quantity</th>
+                <th>Price</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* <!-- row 1 --> */}
+              {tools.reverse().map((tool, index) => (
+                <ListOfTools
+                  setDeletingProduct={setDeletingProduct}
+                  tool={tool}
+                  key={tool._id}
+                  index={index}
+                  refetch={refetch}
+                ></ListOfTools>
+              ))}
+            </tbody>
+          </table>
         </div>
-    );
+      </div>
+      {
+          deletingProduct && <DeleteConfirmModal deletingProduct={deletingProduct} refetch={refetch} setDeletingProduct={setDeletingProduct}></DeleteConfirmModal>
+      }
+    </div>
+  );
 };
 
 export default ManageProduct;

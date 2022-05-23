@@ -6,7 +6,12 @@ import {
   } from 'react-query';
 
 const AllTools = () => {
-    const {data:tools, isLoading, refetch} = useQuery('product', ()=> fetch('http://localhost:5000/product').then(res => res.json()))
+    const {data:tools, isLoading, refetch} = useQuery('product', ()=> fetch('http://localhost:5000/product', {
+        method: 'GET',
+        headers:{
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()))
 
     if(isLoading){
         return <Loading></Loading>

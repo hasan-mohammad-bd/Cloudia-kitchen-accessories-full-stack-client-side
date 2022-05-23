@@ -1,10 +1,10 @@
 import React from "react";
 
-const ListOfTools = ({ tool, index,_id }) => {
+const ListOfTools = ({ tool, index,_id, setDeletingProduct }) => {
   const { name, price, quantity, img, description } = tool;
 
   const handleDelete = () =>{
-      
+
   } 
   return (
     <tr>
@@ -22,7 +22,7 @@ const ListOfTools = ({ tool, index,_id }) => {
     <td>{name}</td>
     <td>{quantity} pcs</td>
     <td>${price}</td>
-    <td><button onClick={handleDelete} className="btn">Delete</button></td>
+    <td><label onClick={()=>setDeletingProduct(tool)} htmlFor="delete-confirm-modal" class="btn btn-alert">Delete</label></td>
   </tr>
   );
 };

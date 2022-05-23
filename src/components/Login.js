@@ -7,6 +7,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import { useForm } from "react-hook-form";
 import useToken from './hook/useToken';
 import auth from '../firebase.init';
+import Loading from './Loading';
 
 
 const Login = () => {
@@ -33,7 +34,7 @@ const Login = () => {
     }, [token, from, navigate])
 
     if (loading || gLoading) {
-        // return <Loading></Loading>
+       return <Loading></Loading>
     }
 
     if(error || gError){

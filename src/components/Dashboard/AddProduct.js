@@ -23,6 +23,9 @@ const AddProduct = () => {
     const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
     fetch(url, {
       method: "POST",
+      headers:{
+        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+    },
       body: formData,
     })
       .then((res) => res.json())

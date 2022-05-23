@@ -46,6 +46,7 @@ function App() {
         <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/allproducts' element={<AllTools></AllTools>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
       </Routes>
       <ToastContainer position="bottom-right"></ToastContainer>
       <Footer></Footer>
