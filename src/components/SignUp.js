@@ -5,9 +5,10 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 import useToken from './hook/useToken';
+import Loading from './Loading';
 
 
-const SignUp = () => {
+const SignUp =  () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
@@ -19,15 +20,14 @@ const SignUp = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-    const [token] = useToken(gUser || user)
-
+    const [token] =  useToken(user || gUser)
 
     const navigate = useNavigate();
 
     let signInError;
 
     if (loading || gLoading || updating) {
-        // return <Loading></Loading>
+        return <Loading></Loading>
     }
 
     if (error || gError || updateError) {
@@ -35,7 +35,7 @@ const SignUp = () => {
     }
 
     if (token) {
-        navigate('/appointment')
+        navigate('/dashboard')
     }
 
     const onSubmit = async data => {

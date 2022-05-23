@@ -1,8 +1,12 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
+import auth from "../../firebase.init";
 import "./Navbar.css";
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
+  const [user, loading, error] = useAuthState(auth);
   return (
     <div className="py-5">
       <div className="flex justify-between container mx-auto">
@@ -17,7 +21,9 @@ const Navbar = () => {
         <li><NavLink to="/blogs">Blogs</NavLink></li>
         <li><NavLink to="/dashboard">Dashboard</NavLink></li>
         <li><NavLink to="/myportfolio">My Portfolio</NavLink></li>
-        <li><NavLink to="/login">Login</NavLink></li>
+        {
+            !user? <NavLink to="/login">Login</NavLink> : <button onClick={()=>{signOut(auth)}} className="btn btn-success">Logout</button>
+          }
       </ul>
     </div>
     <div className="img-holder">
@@ -27,13 +33,15 @@ const Navbar = () => {
         </div>
 
         <div>
-        <div className="nav-links hidden md:flex">
+        <div className="nav-links hidden md:flex items-center">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/shop">Shop</NavLink>
           <NavLink to="/blogs">Blogs</NavLink>
           <NavLink to="/dashboard">Dashboard</NavLink>
           <NavLink to="/myportfolio">My Portfolio</NavLink>
-          <NavLink to="/login">Login</NavLink>
+          {
+            !user? <NavLink to="/login">Login</NavLink> : <button onClick={()=>{signOut(auth)}} className="btn btn-success">Logout</button>
+          }
         </div>
 
         </div>

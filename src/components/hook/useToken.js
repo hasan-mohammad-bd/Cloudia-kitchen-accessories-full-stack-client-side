@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 
+
 const useToken = user => {
     const [token, setToken] = useState('');
 
-    useEffect(()=>{
+    useEffect( ()=>{
         const email = user?.user?.email;
-        const name = user?.user?.displayName
         const currentUser = {
-            email: email,
-            name: name       
+            email: email     
         };
         if(email){
             fetch(`http://localhost:5000/user/${email}`, {
