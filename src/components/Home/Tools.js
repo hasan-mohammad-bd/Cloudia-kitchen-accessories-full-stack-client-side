@@ -1,22 +1,29 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import Tool from './Tool';
+import {
+    useQuery,
+    useMutation,
+    useQueryClient,
+    QueryClient,
+    QueryClientProvider,
+  } from 'react-query';
+import Loading from '../Loading';
 
 const Tools = () => {
-    const [tools, setTools] = useState([]);
-    console.log(tools);
 
-    useEffect(()=>{
-        fetch('http://localhost:5000/product')
-        .then(res => res.json())
-        .then(data => setTools(data))
-    },[])
+    const {data:tools, isLoading, refetch} = useQuery('product', ()=> fetch('http://localhost:5000/product').then(res => res.json()))
+
+    if(isLoading){
+        return <Loading></Loading>
+    }
+
     return (
         <div className='h-20'>
             <h2 className='text-center'>Our all Kitchen Tools</h2>
             <div>
                 {
-                    tools.slice(-6).reverse().map(tool => <Tool tool={tool} key={tool._id}></Tool>)
+                    tools.slice(-6).reverse().map(tool => <Tool tool={tool} key={tool._id} refetch={refetch}></Tool>)
                 }
             </div>
         </div>
