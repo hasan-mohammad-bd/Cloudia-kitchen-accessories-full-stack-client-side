@@ -6,7 +6,7 @@ import {
   } from 'react-query';
 
 const AllTools = () => {
-    const {data:tools, isLoading, refetch} = useQuery('product', ()=> fetch('http://localhost:5000/product', {
+    const {data:tools, isLoading, refetch} = useQuery('shopPorduct', ()=> fetch('http://localhost:5000/product', {
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -22,7 +22,7 @@ const AllTools = () => {
             <h2 className='text-center'>Our all Kitchen Tools</h2>
             <div>
                 {
-                    tools.slice(-6).reverse().map(tool => <AllTool tool={tool} key={tool._id} refetch={refetch}></AllTool>)
+                    tools.reverse().map(tool => <AllTool tool={tool} key={tool._id} refetch={refetch}></AllTool>)
                 }
             </div>
         </div>

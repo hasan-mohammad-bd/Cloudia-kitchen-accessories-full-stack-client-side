@@ -1,7 +1,7 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-const MakeAdminList = ({ index, user, refetch }) => {
+const MakeAdminList = ({ index, user, refetch, singleUser, user1 }) => {
 
   const { email, role } = user;
   const makeAdmin =()=>{
@@ -53,9 +53,10 @@ const MakeAdminList = ({ index, user, refetch }) => {
     <tr>
       <td>{index + 1}</td>
 
-      <td>{email} {role === 'admin' && <div class="badge badge-accent">admin</div>}</td>
+      <td>{email} {role === 'admin' && <div class="badge badge-accent">admin</div>} {singleUser.email === user.email && <div class="badge badge-success">You</div>}</td>
       <td>
-      {role !== 'admin'? <button onClick={()=>{makeAdmin()}} class="btn btn-outline btn-success">Make Admin</button> : <button onClick={()=>{removeAdmin()}} class="btn btn-outline btn-error">Remove Admin</button>}
+        
+      {role !== 'admin'? <button onClick={()=>{makeAdmin()}} class="btn btn-outline btn-success">Make Admin</button> : <button onClick={()=>{removeAdmin()}} disabled={singleUser.email === user.email} class="btn btn-outline btn-error">Remove Admin</button>}
       </td>
     </tr>
   );

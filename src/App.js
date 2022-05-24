@@ -24,6 +24,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import AllTools from './components/AllTools';
 import RequireAuth from './components/RequireAuth';
 import RequireAdmin from './components/RequireAdmin';
+import EditMyProfile from './components/Dashboard/EditMyProfile';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path ='addreview' element={<AddReview></AddReview>}></Route>
           <Route path ='myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path ='makeadmin' element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
+          <Route path ='editprofile' element={<EditMyProfile></EditMyProfile>}></Route>
           <Route path ='manageallorders' element={<RequireAdmin><ManageAllOrders></ManageAllOrders></RequireAdmin>}></Route>
           <Route path ='manageproduct' element={<RequireAdmin><ManageProduct></ManageProduct></RequireAdmin>}></Route>
           <Route path ='addProduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>

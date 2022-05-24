@@ -12,7 +12,7 @@ import Loading from '../Loading';
 
 const Tools = () => {
 
-    const {data:tools, isLoading, refetch} = useQuery('product', ()=> fetch('http://localhost:5000/product',{
+    const {data:tools, isLoading, refetch} = useQuery('homeProduct', ()=> fetch('http://localhost:5000/product',{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,7 +23,6 @@ const Tools = () => {
     if(isLoading){
         return <Loading></Loading>
     }
-    console.log(tools);
     return (
         <div className='h-20'>
             <h2 className='text-center'>Our all Kitchen Tools</h2>

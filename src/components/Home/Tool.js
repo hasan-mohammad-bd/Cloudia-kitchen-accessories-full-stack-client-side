@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Tool = ({tool}) => {
-    console.log(tool);
     const {productName, price, quantity, img, description} = tool;
     return (
         <div>

@@ -11,7 +11,7 @@ const ManageProduct = () => {
     data: tools,
     isLoading,
     refetch,
-  } = useQuery("product", () =>
+  } = useQuery("productList", () =>
     fetch("http://localhost:5000/product",{
         method: 'GET',
         headers:{
@@ -24,7 +24,6 @@ const ManageProduct = () => {
     return <Loading></Loading>;
   }
 
-  console.log(tools);
 
   return (
     <div className="h-20">

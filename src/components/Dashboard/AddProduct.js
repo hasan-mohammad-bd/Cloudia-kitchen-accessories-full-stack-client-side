@@ -23,9 +23,6 @@ const AddProduct = () => {
     const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
     fetch(url, {
       method: "POST",
-      headers:{
-        authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    },
       body: formData,
     })
       .then((res) => res.json())
@@ -43,6 +40,7 @@ const AddProduct = () => {
           fetch("http://localhost:5000/product", {
             method: "POST",
             headers: {
+              authorization: `Bearer ${localStorage.getItem('accessToken')}`,
               "content-type": "application/json",
             },
             body: JSON.stringify(product),
