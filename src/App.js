@@ -25,6 +25,7 @@ import AllTools from './components/AllTools';
 import RequireAuth from './components/RequireAuth';
 import RequireAdmin from './components/RequireAdmin';
 import EditMyProfile from './components/Dashboard/EditMyProfile';
+import Purchase from './components/Purchase';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/shop' element={<Shop></Shop>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/purchase/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path ='addreview' element={<AddReview></AddReview>}></Route>
