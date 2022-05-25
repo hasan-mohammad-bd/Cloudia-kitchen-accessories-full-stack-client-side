@@ -54,6 +54,7 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
         ) {
           const booking = {
             product: name,
+            bookedBy: user.displayName,
             booked: bookedQuantity,
             totalPrice: bookedQuantity * price,
             img: img,
