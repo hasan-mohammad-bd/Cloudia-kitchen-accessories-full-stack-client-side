@@ -24,6 +24,7 @@ const Payment = () => {
         return <Loading></Loading>
     }
 
+    console.log(order);
     const { product, booked, totalPrice, img, _id, bookedBy } = order;
 
     return (

@@ -15,6 +15,11 @@ const firebaseConfig = {
   appId: "1:378702944718:web:828a423bb74f5e0286339f"
 };
 
+//**************************************************************/
+//its not working if I put the firebase secret key to .env file
+//**************************************************************/
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 

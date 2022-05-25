@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const MyOrderList = ({ order, index, setDeletingProduct }) => {
-    const { product, booked, totalPrice, img, _id } = order;
+    const { product, booked, totalPrice, img, _id, status } = order;
     const navigate = useNavigate()
   
  
@@ -28,8 +28,17 @@ const MyOrderList = ({ order, index, setDeletingProduct }) => {
         }
       </td>
 
-      <td>{!order.paid && <button onClick={()=>{navigate(`/dashboard/payment/${_id}`)}} className='btn btn-success mb-3'>Pay</button>}</td>
-      <td>{order.paid && <p className='text-success'>Paid</p>}</td>
+      <td>{!order.paid && <button onClick={()=>{navigate(`/dashboard/payment/${_id}`)}} className='btn btn-success mb-3'>Pay</button>}
+      {order.paid && <div>
+        {
+            !status ? <p className='text-green-300'>Paid</p> : <p className='text-green-700'>Shipped</p>
+        }
+        <p className='text-success'>Transaction ID:  {order.transactionId}</p>
+
+          
+          </div>}
+      </td>
+
     </tr>
     );
   };

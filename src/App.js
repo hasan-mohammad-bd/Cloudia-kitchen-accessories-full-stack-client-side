@@ -28,6 +28,7 @@ import EditMyProfile from './components/Dashboard/EditMyProfile';
 import Purchase from './components/Purchase';
 import EditProfileForShip from './components/EditPrifileforShip';
 import Payment from './components/Dashboard/Payment';
+import WelcomeToDashboard from './components/Dashboard/WelcomeToDashboard';
 
 
 function App() {
@@ -43,7 +44,8 @@ function App() {
         <Route path='/purchase/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
         <Route path='/editprofileship' element={<RequireAuth><EditProfileForShip></EditProfileForShip></RequireAuth>}></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
-          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route index element={<WelcomeToDashboard></WelcomeToDashboard>}></Route>
+          <Route path='myorder' element={<MyOrder></MyOrder>}></Route>
           <Route path ='addreview' element={<AddReview></AddReview>}></Route>
           <Route path ='myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path ='payment/:id' element={<Payment></Payment>}></Route>

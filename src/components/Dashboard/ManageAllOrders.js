@@ -40,8 +40,8 @@ const ManageAllOrders = () => {
                   <th>Booked By</th>
                   <th>Booked Quantity</th>
                   <th>Total Price</th>
-                  <th></th>
-                  <th></th>
+                  <th>Delete</th>
+                  <th>Status</th>
                 </tr>
               </thead>
               <tbody>
