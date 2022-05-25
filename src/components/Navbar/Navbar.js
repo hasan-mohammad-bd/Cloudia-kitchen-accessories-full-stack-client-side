@@ -19,7 +19,9 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/shop">Shop</NavLink></li>
         <li><NavLink to="/blogs">Blogs</NavLink></li>
-        <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+        {
+          user &&  <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+        }
         <li><NavLink to="/myportfolio">My Portfolio</NavLink></li>
         {
             !user? <NavLink to="/login">Login</NavLink> : <button onClick={()=>{signOut(auth)}} className="btn btn-success">Logout</button>
@@ -37,7 +39,9 @@ const Navbar = () => {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/shop">Shop</NavLink>
           <NavLink to="/blogs">Blogs</NavLink>
-          <NavLink to="/dashboard">Dashboard</NavLink>
+          {
+            user && <NavLink to="/dashboard">Dashboard</NavLink>
+          }
           <NavLink to="/myportfolio">My Portfolio</NavLink>
           {
             !user? <NavLink to="/login">Login</NavLink> : <button onClick={()=>{signOut(auth)}} className="btn btn-success">Logout</button>

@@ -130,10 +130,10 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
           <p class="py-2">price: ${price} </p>
           <div className="rounded-lg shadow-2xl p-5 my-5 w-full">
             <p>Shipping Address:</p>
-            <p>Receiver Name: {user.displayName}</p>
-            <p>Receiver email: {purchaeUser.email}</p>
-            <p>Receiver Address: {purchaeUser.address}</p>
-            <p>Receiver phone: {purchaeUser.phone}</p>
+            <p>Name: {user.displayName}</p>
+            <p>Email: {purchaeUser.email}</p>
+            <p>Address: {purchaeUser.address}</p>
+            <p>Phone: {purchaeUser.phone}</p>
             <button
               onClick={() => {
                 navigate("/editprofileship");

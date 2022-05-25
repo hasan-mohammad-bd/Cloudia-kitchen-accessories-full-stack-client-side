@@ -27,8 +27,8 @@ const DeletingOrderConfirmModal = ({deletingProduct, setDeletingProduct, refetch
       <input type="checkbox" id="delete-confirm-book-modal" class="modal-toggle" />
       <div class="modal modal-bottom sm:modal-middle">
         <div class="modal-box">
-        <label htmlFor="my-modal-3" class="btn btn-sm btn-circle absolute mb-3 right-2 top-2">✕</label>
-          <h3 class="font-bold text-lg">
+        <label htmlFor="delete-confirm-book-modal" class="btn btn-sm btn-circle absolute mb-3 right-2 top-2">✕</label>
+          <h3 class="font-bold text-lg my-16 text-center">
             Ary you sure? Do you want to delete <span className="text-red-500">{deletingProduct.product}</span>?
           </h3>
           <div class="modal-action">

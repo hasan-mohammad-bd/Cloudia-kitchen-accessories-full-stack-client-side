@@ -41,8 +41,8 @@ const MyOrder = () => {
                   <th>Name</th>
                   <th>Booked Quantity</th>
                   <th>Total Price</th>
-                  <th></th>
-                  <th></th>
+                  <th>Delete</th>
+                  <th>Payment</th>
                 </tr>
               </thead>
               <tbody>
