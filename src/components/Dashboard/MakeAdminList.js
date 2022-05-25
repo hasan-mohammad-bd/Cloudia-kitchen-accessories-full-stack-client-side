@@ -42,7 +42,7 @@ const MakeAdminList = ({ index, user, refetch, singleUser, user1 }) => {
     .then(data =>{
         if(data.modifiedCount){
             refetch();
-            toast.success("Successfully remove an admin");
+            toast.success("New available quantity has been updated");
   
         }
 

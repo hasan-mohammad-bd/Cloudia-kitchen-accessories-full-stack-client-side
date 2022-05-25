@@ -1,11 +1,13 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const EditMyProfile = () => {
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate()
     const {
@@ -54,7 +56,7 @@ const EditMyProfile = () => {
                   if (inserted.matchedCount || inserted.modifiedCount) {
                     toast.success("Profile has been updated");
                     reset();
-                    navigate('/dashboard/myprofile')
+                    navigate(from, { replace: true });
 
                   }
                 });
@@ -117,11 +119,12 @@ const EditMyProfile = () => {
           {errors.phone?.type === "required" && (
             <span className="text-red-400 mb-3">"Phone number is required"</span>
           )}
+          <p className='py-3'>Optional: </p>
           <input
             className="input w-full max-w-xs input-bordered mb-2 input-success"
             type="text"
             placeholder="linkdin URL Link"
-            {...register("linkdin", { required: true })}
+            {...register("linkdin", { required: false })}
           />
           {errors.linkdin?.type === "required" && (
             <span className="text-red-400 mb-3">
@@ -133,7 +136,7 @@ const EditMyProfile = () => {
             className="input w-full max-w-xs input-bordered mb-2 input-success p-1"
             type="file"
             placeholder="Upload profile picture"
-            {...register("image", { required: true })}
+            {...register("image", { required: false })}
           />
           {errors.image?.type === "required" && (
             <span className="text-red-400 mb-3">"Image is required"</span>

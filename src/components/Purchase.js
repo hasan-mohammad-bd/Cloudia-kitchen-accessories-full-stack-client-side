@@ -19,7 +19,7 @@ const Purchase = () => {
 
     return (
         <div>
-            <PurchasePageProduct product={product}></PurchasePageProduct>
+            <PurchasePageProduct product={product} id={id} refetch={refetch}></PurchasePageProduct>
         </div>
     );
 };
