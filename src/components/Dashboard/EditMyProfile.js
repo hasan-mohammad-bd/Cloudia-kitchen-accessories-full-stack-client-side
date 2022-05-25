@@ -17,7 +17,7 @@ const EditMyProfile = () => {
         reset,
       } = useForm();
     
-      const imageStorageKey = "8d799c0a039c8e9eb8a5863caa8d7d22";
+      const imageStorageKey = "e13db2847aef26aa802f8fcd3056d297";
     
       const onSubmit = async (data) => {
         const image = data.image[0]
