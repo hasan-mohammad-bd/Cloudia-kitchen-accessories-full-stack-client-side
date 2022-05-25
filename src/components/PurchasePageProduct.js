@@ -137,13 +137,14 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
               onClick={() => {
                 navigate("/editprofileship");
               }}
-              className="btn btn-success py-3"
+              className="btn btn-success btn-sm"
             >
               Update Address
             </button>
           </div>
-          <form className="flex items-center" onSubmit={handleSubmit(onSubmit)}>
-            <input
+          <form className="flex items-center justify-between" onSubmit={handleSubmit(onSubmit)}>
+              <div className="flex items-center">
+              <input
               className="input w-20 max-w-xs input-bordered input-success"
               type="number"
               defaultValue="5"
@@ -151,12 +152,13 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
               placeholder="Your booking quantity"
               {...register("book", { required: true })}
             />
+            <p className="ml-3">pcs</p>
+              </div>
             {errors.book?.type === "required" && (
               <span className="text-red-400 mb-3">
                 "Please insert your booking quantity"
               </span>
             )}
-            <p className="ml-1 mr-3">pcs</p>
             <input
               className="btn btn-accent input w-full max-w-xs"
               type="submit"

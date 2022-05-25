@@ -3,9 +3,7 @@ import React from "react";
 const ListOfTools = ({ tool, index,_id, setDeletingProduct }) => {
   const { name, price, quantity, img, description } = tool;
 
-  const handleDelete = () =>{
 
-  } 
   return (
     <tr>
     <td>{index + 1}</td>
