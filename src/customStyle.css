@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
 
 
 * {
@@ -26,7 +26,7 @@
 }
 
 .btn-1 {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     color: white;
     padding: 10px 30px;
     transition: all 0.3s ease-in;
@@ -48,4 +48,8 @@
 
 .page-not-found{
     background-image: url(./Image/404cover.png);
+}
+
+#summary-section > h1,h2{
+    font-family: 'Open Sans', sans-serif;;
 }
