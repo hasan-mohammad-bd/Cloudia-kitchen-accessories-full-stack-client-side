@@ -4,3 +4,44 @@
 * {
     font-family: 'Raleway', sans-serif;
 }
+
+
+.cover-1 {
+    width: 100%;
+    height: 90vh;
+    background-image: url(./Image/bn3.1.webp);
+    background-position: 50% 10%;
+    background-size: 120%;
+
+}
+
+.cover-2 {
+
+    width: 100%;
+    height: 90vh;
+    background-image: url(./Image/bn3.2.webp);
+    background-position: 50% 20%;
+    background-size: 100%;
+    
+}
+
+.btn-1 {
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    transition: all 0.3s ease-in;
+}
+
+.btn-1:hover{
+    background-color: rgb(219, 219, 219);
+    color: black;
+}
+
+.product-card{
+    border-radius: 0px;
+}
+
+.line{
+    height: 1px;
+    background-color: black;
+}
