@@ -16,3 +16,4 @@ I worked on this kitchen tools, where I am making kitchen tools product . all fe
 - Server site has been hosted in heroku.com .
 - client site has been hosted in netlify.com .
 - jwt has been used 
+- react query has been used
