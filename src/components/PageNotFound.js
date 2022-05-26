@@ -2,7 +2,7 @@ import React from 'react';
 
 const PageNotFound = () => {
     return (
-        <div className='h-screen w-full'>
+        <div className='h-screen w-full page-not-found'>
             
         </div>
     );

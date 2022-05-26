@@ -3,10 +3,15 @@ import React from "react";
 const ReviewCard = ({ review }) => {
   const { name, description, rating, img } = review;
   return (
-    <div>
-      <p>name {name}</p>
-      <p>review: {description}</p>
-      <p>{
+    <div class="card w-full bg-base-100 shadow-xl xm-auto text-center review-card py-5">
+        <div class="avatar">
+  <div class="w-24 rounded-full mx-auto">
+    <img src={img} />
+  </div>
+</div>
+  <div class="card-body">
+    <h2 class="card-title mx-auto">{name}</h2>
+    <p>{
       rating == 5 && 
       
       <div className="rating">
@@ -76,7 +81,15 @@ const ReviewCard = ({ review }) => {
       }
       
       </p>
+
+    <p>{description}</p>
+    <div class="card-actions justify-end">
     </div>
+  </div>
+</div>
+
+
+
   );
 };
 

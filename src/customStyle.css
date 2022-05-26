@@ -37,11 +37,15 @@
     color: black;
 }
 
-.product-card{
+.product-card, .review-card{
     border-radius: 0px;
 }
 
 .line{
     height: 1px;
     background-color: black;
+}
+
+.page-not-found{
+    background-image: url(./Image/404cover.png);
 }
