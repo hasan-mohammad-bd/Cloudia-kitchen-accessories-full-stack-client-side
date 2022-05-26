@@ -37,7 +37,7 @@ const AddProduct = () => {
             img: img,
           };
 
-          fetch("http://localhost:5000/product", {
+          fetch("https://radiant-lake-65921.herokuapp.com/product", {
             method: "POST",
             headers: {
               authorization: `Bearer ${localStorage.getItem('accessToken')}`,

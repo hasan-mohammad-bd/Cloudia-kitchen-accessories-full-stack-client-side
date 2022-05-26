@@ -30,7 +30,7 @@ const EditProfileForShip = () => {
 
           };
 
-          fetch(`http://localhost:5000/profile/${user.email}`, {
+          fetch(`https://radiant-lake-65921.herokuapp.com/profile/${user.email}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`,
@@ -40,7 +40,7 @@ const EditProfileForShip = () => {
           })
             .then((res) => res.json())
             .then((inserted) => {
-                console.log(inserted);
+
               if (inserted.matchedCount || inserted.modifiedCount) {
                 toast.success("Profile has been updated");
                 reset();
@@ -55,7 +55,7 @@ const EditProfileForShip = () => {
 
 
     return (
-<div>
+<div className='py-10'>
     <h2 className='text-2xl text-center mb-11'>Edit Profile</h2>
 <div className='flex justify-center items-center'>
 
@@ -115,7 +115,7 @@ const EditProfileForShip = () => {
 
 
     <input
-      className="btn btn-accent input w-full max-w-xs"
+      className="btn btn-accent input w-full max-w-xs btn-1"
       type="submit"
     />
   </form>

@@ -6,7 +6,7 @@ import PurchasePageProduct from './PurchasePageProduct';
 
 const Purchase = () => {
     const {id} = useParams()
-    const {data: product, isLoading, refetch} = useQuery('purchaseProduct', ()=> fetch(`http://localhost:5000/product/${id}`,{
+    const {data: product, isLoading, refetch} = useQuery('purchaseProduct', ()=> fetch(`https://radiant-lake-65921.herokuapp.com/product/${id}`,{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

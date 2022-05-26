@@ -5,7 +5,7 @@ const MakeAdminList = ({ index, sUser, refetch, singleUser }) => {
 
   const { email, role } = sUser;
   const makeAdmin =()=>{
-    fetch(`http://localhost:5000/user/admin/${email}`,{
+    fetch(`https://radiant-lake-65921.herokuapp.com/user/admin/${email}`,{
         method:'PUT',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -27,7 +27,7 @@ const MakeAdminList = ({ index, sUser, refetch, singleUser }) => {
     })
 }
   const removeAdmin =()=>{
-    fetch(`http://localhost:5000/user/adminRemove/${email}`,{
+    fetch(`https://radiant-lake-65921.herokuapp.com/user/adminRemove/${email}`,{
         method:'PUT',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

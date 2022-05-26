@@ -12,7 +12,7 @@ const ManageProduct = () => {
     isLoading,
     refetch,
   } = useQuery("productList", () =>
-    fetch("http://localhost:5000/product",{
+    fetch("https://radiant-lake-65921.herokuapp.com/product",{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

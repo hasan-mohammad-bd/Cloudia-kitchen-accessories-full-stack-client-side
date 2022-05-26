@@ -2,11 +2,11 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const DeletingOrderConfirmModal = ({deletingProduct, setDeletingProduct, refetch}) => {
-    console.log(deletingProduct);
+
 
     const handleDelete = () =>{
         const id = deletingProduct._id
-        const url = `http://localhost:5000/book/${id}`
+        const url = `https://radiant-lake-65921.herokuapp.com/book/${id}`
         fetch(url, {
             method: 'DELETE',
             headers:{

@@ -12,7 +12,7 @@ import Loading from '../Loading';
 
 const Tools = () => {
 
-    const {data:tools, isLoading, refetch} = useQuery('homeProduct', ()=> fetch('http://localhost:5000/product').then(res => res.json()))
+    const {data:tools, isLoading, refetch} = useQuery('homeProduct', ()=> fetch('https://radiant-lake-65921.herokuapp.com/product').then(res => res.json()))
 
 
     if(isLoading){

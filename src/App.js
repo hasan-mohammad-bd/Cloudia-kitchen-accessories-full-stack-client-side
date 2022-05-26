@@ -47,7 +47,7 @@ function App() {
           <Route index element={<WelcomeToDashboard></WelcomeToDashboard>}></Route>
           <Route path='myorder' element={<MyOrder></MyOrder>}></Route>
           <Route path ='addreview' element={<AddReview></AddReview>}></Route>
-          <Route path ='myprofile' element={<MyProfile></MyProfile>}></Route>
+        <Route path ='myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path ='payment/:id' element={<Payment></Payment>}></Route>
           <Route path ='makeadmin' element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
           <Route path ='editprofile' element={<EditMyProfile></EditMyProfile>}></Route>

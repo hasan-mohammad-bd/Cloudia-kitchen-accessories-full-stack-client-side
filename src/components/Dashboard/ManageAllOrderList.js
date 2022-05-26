@@ -3,11 +3,11 @@ import { toast } from 'react-toastify';
 
 const ManageAllOrderList = ({ order, index , setDeletingProduct, refetch }) => {
     const { product, booked, totalPrice, img, bookedBy, _id, status } = order;
-    console.log(_id);
+
     const setStatus =()=>{
 
 
-        fetch(`http://localhost:5000/status/${_id}`,{
+        fetch(`https://radiant-lake-65921.herokuapp.com/status/${_id}`,{
             method:'PATCH',
             headers:{
                 'content-type': 'application/json',

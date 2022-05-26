@@ -41,7 +41,7 @@ const EditMyProfile = () => {
                 img: img
               };
     
-              fetch(`http://localhost:5000/profile/${user.email}`, {
+              fetch(`https://radiant-lake-65921.herokuapp.com/profile/${user.email}`, {
                 method: "PUT",
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`,
@@ -51,7 +51,7 @@ const EditMyProfile = () => {
               })
                 .then((res) => res.json())
                 .then((inserted) => {
-                    console.log(inserted);
+
                   if (inserted.matchedCount || inserted.modifiedCount) {
                     toast.success("Profile has been updated");
                     reset();
@@ -119,12 +119,11 @@ const EditMyProfile = () => {
           {errors.phone?.type === "required" && (
             <span className="text-red-400 mb-3">"Phone number is required"</span>
           )}
-          <p className='py-3'>Optional: </p>
           <input
             className="input w-full max-w-xs input-bordered mb-2 input-success"
             type="text"
             placeholder="linkdin URL Link"
-            {...register("linkdin", { required: false })}
+            {...register("linkdin", { required: true })}
           />
           {errors.linkdin?.type === "required" && (
             <span className="text-red-400 mb-3">
@@ -136,14 +135,14 @@ const EditMyProfile = () => {
             className="input w-full max-w-xs input-bordered mb-2 input-success p-1"
             type="file"
             placeholder="Upload profile picture"
-            {...register("image", { required: false })}
+            {...register("image", { required: true })}
           />
           {errors.image?.type === "required" && (
             <span className="text-red-400 mb-3">"Image is required"</span>
           )}
 
           <input
-            className="btn btn-accent input w-full max-w-xs"
+            className="btn btn-accent btn-1 input w-full max-w-xs"
             type="submit"
           />
         </form>

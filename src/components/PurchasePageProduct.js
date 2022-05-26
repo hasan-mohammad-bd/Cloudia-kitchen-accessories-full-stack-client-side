@@ -22,7 +22,7 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
     data: purchaeUser,
     isLoading,
   } = useQuery("purchaseProfile", () =>
-    fetch(`http://localhost:5000/user/${user.email}`, {
+    fetch(`https://radiant-lake-65921.herokuapp.com/user/${user.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -37,7 +37,7 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
 
 
   const { name, price, quantity, img, description, _id } = product;
-  console.log(product);
+
 
   const onSubmit = async (data) => {
     const bookedQuantity = data.book;
@@ -65,7 +65,7 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
             phone: purchaeUser.phone,
           };
 
-          fetch(`http://localhost:5000/book`, {
+          fetch(`https://radiant-lake-65921.herokuapp.com/book`, {
             method: "POST",
             headers: {
               authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -81,11 +81,11 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
             });
 
             const remainQuantity = parseInt(quantity) - parseInt(bookedQuantity);
-            console.log(remainQuantity);
 
 
 
-                fetch(`http://localhost:5000/productQuantity/${_id}`,{
+
+                fetch(`https://radiant-lake-65921.herokuapp.com/productQuantity/${_id}`,{
                     method:'PUT',
                     headers:{
                         'content-type': 'application/json',
@@ -95,9 +95,9 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
                 })
                 .then(res =>  res.json())
                 .then(data =>{
-                    console.log(data);
+ 
                     if(data.modifiedCount){
-                        console.log(data);
+ 
                         refetch();
                         reset();
                         toast.success(`Successfully booked ${product.name} `);
@@ -138,7 +138,7 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
               onClick={() => {
                 navigate("/editprofileship");
               }}
-              className="btn btn-success btn-sm"
+              className="btn btn-success btn-sm btn-1"
             >
               Update Address
             </button>
@@ -161,12 +161,12 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
               </span>
             )}
             <input
-              className="btn btn-accent input w-full max-w-xs"
+              className="btn btn-accent input w-full max-w-xs btn-1"
               type="submit"
               value="Book"
             />
           </form>
-          <button class="btn btn-primary w-full mt-10">
+          <button onClick={()=>{navigate('/dashboard/myorder')}} class="btn btn-primary w-full mt-10 btn-1">
             Proceed for Payment
           </button>
         </div>

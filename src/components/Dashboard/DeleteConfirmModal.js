@@ -6,7 +6,7 @@ const DeleteConfirmModal = ({deletingProduct, setDeletingProduct, refetch}) => {
 
     const handleDelete = () =>{
         const id = deletingProduct._id
-        const url = `http://localhost:5000/product/${id}`
+        const url = `https://radiant-lake-65921.herokuapp.com/product/${id}`
         fetch(url, {
             method: 'DELETE',
             headers:{

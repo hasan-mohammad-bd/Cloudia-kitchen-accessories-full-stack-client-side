@@ -11,10 +11,10 @@ const CheckoutForm = ({ order }) => {
     const [clientSecret, setClientSecret] = useState('');
 
     const { product, booked, totalPrice, img, _id, bookedBy, email } = order;
-    console.log(totalPrice);
+
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://radiant-lake-65921.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/booking/${_id}`, {
+            fetch(`https://radiant-lake-65921.herokuapp.com/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
@@ -90,7 +90,7 @@ const CheckoutForm = ({ order }) => {
             }).then(res=>res.json())
             .then(data => {
                 setProcessing(false);
-                console.log(data);
+
             })
 
         }

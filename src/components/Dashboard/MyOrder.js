@@ -14,7 +14,7 @@ const MyOrder = () => {
       isLoading,
       refetch,
     } = useQuery("myOrderList", () =>
-      fetch(`http://localhost:5000/book/${user.email}`,{
+      fetch(`https://radiant-lake-65921.herokuapp.com/book/${user.email}`,{
           method: 'GET',
           headers:{
               authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -26,7 +26,7 @@ const MyOrder = () => {
       return <Loading></Loading>;
     }
 
-    console.log(deletingProduct);
+
     return (
         <div className="h-20">
         <h2 className="text-center text-2xl mb-5">All Kitchen Tools</h2>

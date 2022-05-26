@@ -6,7 +6,7 @@ import {
   } from 'react-query';
 
 const AllTools = () => {
-    const {data:tools, isLoading, refetch} = useQuery('shopPorduct', ()=> fetch('http://localhost:5000/product', {
+    const {data:tools, isLoading, refetch} = useQuery('shopPorduct', ()=> fetch('https://radiant-lake-65921.herokuapp.com/product', {
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

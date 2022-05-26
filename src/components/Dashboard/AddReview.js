@@ -32,7 +32,7 @@ const AddReview = () => {
                 img: img,
               };
     
-              fetch("http://localhost:5000/review", {
+              fetch("https://radiant-lake-65921.herokuapp.com/review", {
                 method: "POST",
                 headers: {
                   authorization: `Bearer ${localStorage.getItem('accessToken')}`,
@@ -83,7 +83,7 @@ const AddReview = () => {
             {errors.description?.type === "required" && (
               <span className="text-red-400 mb-3">"Description is required"</span>
             )}
-  
+            <p className='mt-3'>Please provide your Profile picture</p>
             <input
               className="input w-full max-w-xs input-bordered mb-2 input-success p-1"
               type="file"
@@ -95,7 +95,7 @@ const AddReview = () => {
             )}
   
             <input
-              className="btn btn-accent input w-full max-w-xs"
+              className="btn btn-accent input w-full max-w-xs btn-1"
               type="submit"
             />
           </form>
