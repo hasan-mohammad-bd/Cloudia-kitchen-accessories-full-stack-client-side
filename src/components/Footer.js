@@ -8,7 +8,7 @@ const Footer = () => {
   <div className="img-holder w-[150px] lg:w-[200px]">
           <img className="w-full" src={logo} alt="" />
         </div>
-    <p>ACME Industries Ltd.<br/>Providing reliable tech since 1992</p>
+    <p>Cludia Industries Ltd.<br/>Providing kitchen accessories since 1992</p>
   </div> 
   <div>
     <span class="footer-title">Social</span> 
