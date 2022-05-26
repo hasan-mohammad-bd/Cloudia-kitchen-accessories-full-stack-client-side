@@ -1,3 +1,27 @@
 .nav-links a {
     margin-left: 30px;
 }
+.navbar-items a {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.navbar-items a:hover{
+    color: rgb(161, 144, 45);
+}
+
+.nav-icons {
+    font-size: 25px;
+    font-weight: 200;
+}
+
+
+.activeRoute{
+    border-bottom: 1px solid rgb(161, 144, 45);
+    transition: all 0.3s ease-in;
+}
+
+.activeRoute:hover{
+    color: rgb(161, 144, 45);
+
+}

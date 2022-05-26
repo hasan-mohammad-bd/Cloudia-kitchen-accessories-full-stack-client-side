@@ -7,7 +7,6 @@ import auth from '../../firebase.init';
 
 const EditMyProfile = () => {
     const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
     const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate()
     const {
@@ -56,7 +55,8 @@ const EditMyProfile = () => {
                   if (inserted.matchedCount || inserted.modifiedCount) {
                     toast.success("Profile has been updated");
                     reset();
-                    navigate(from, { replace: true });
+                    navigate('/dashboard/myprofile')
+                    
 
                   }
                 });

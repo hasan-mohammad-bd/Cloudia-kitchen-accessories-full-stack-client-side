@@ -8,7 +8,10 @@ const DeletingOrderConfirmModal = ({deletingProduct, setDeletingProduct, refetch
         const id = deletingProduct._id
         const url = `http://localhost:5000/book/${id}`
         fetch(url, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers:{
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
         })
         .then(res => res.json())
         .then(data => {

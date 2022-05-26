@@ -8,23 +8,25 @@ import Loading from '../Loading';
 import MakeAdminList from './MakeAdminList';
 
 const MakeAdmin = () => {
-  const [user1, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const [singleUser, setSingleUser] = useState()
   console.log(singleUser?.email);
+  console.log(user);
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/user/${user1.email}`)
+    fetch(`http://localhost:5000/user/${user.email}`)
     .then(res => res.json())
     .then(userData => setSingleUser(userData))
-  },[])
-    const {data:users, isLoading, refetch} = useQuery('makeAdmin', ()=> fetch('http://localhost:5000/user',{
+  },[user])
+
+    const {data:allUsers, isLoading, refetch, isFetching} = useQuery(['adminPage',{cacheTimes: 50}, user.email], ()=> fetch('http://localhost:5000/user',{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()))
 
-    if(isLoading){
+    if(isLoading || isFetching){
         return <Loading></Loading>
     }
 
@@ -47,7 +49,7 @@ const MakeAdmin = () => {
     <tbody>
       {/* <!-- row 1 --> */}
         {
-            users.map((user, index) => <MakeAdminList singleUser={singleUser} user1={user1} refetch={refetch} user={user} key={user._id} index={index}></MakeAdminList>)
+            allUsers?.map((sUser, index) => <MakeAdminList singleUser={singleUser}  refetch={refetch} sUser={sUser} key={sUser._id} index={index}></MakeAdminList>)
         }
 
     </tbody>
