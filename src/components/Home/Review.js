@@ -11,7 +11,7 @@ const Review = () => {
       .then((data) => setReviews(data));
   }, []);
   return (
-    <div className="w-4/5 mx-auto mb-16">
+    <div className="w-4/5 mx-auto mb-16 back-review">
       <h2 className="text-center text-3xl mt-16">Customer Review</h2>
       <div className="line w-32 mx-auto mt-2 mb-16"></div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

@@ -5,7 +5,7 @@ const Tool = ({ tool }) => {
   const navigate = useNavigate();
   const { name, price, quantity, img, description, _id } = tool;
   return (
-    <div class="card w-full bg-base-100 shadow-xl product-card flex flex-col justify-between">
+    <div class="card w-full shadow-xl product-card flex flex-col justify-between bg-white">
       <figure>
         <img src={img} alt="Shoes" />
       </figure>

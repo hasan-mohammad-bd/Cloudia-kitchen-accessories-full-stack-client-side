@@ -3,7 +3,7 @@ import React from "react";
 const ReviewCard = ({ review }) => {
   const { name, description, rating, img } = review;
   return (
-    <div class="card w-full bg-base-100 shadow-xl xm-auto text-center review-card py-5">
+    <div class="card w-full shadow-xl xm-auto text-center review-card py-5 bg-white">
         <div class="avatar">
   <div class="w-24 rounded-full mx-auto">
     <img src={img} />

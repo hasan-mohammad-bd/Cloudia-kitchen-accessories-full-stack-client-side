@@ -19,7 +19,7 @@ const MyProfile = () => {
         return <Loading></Loading>
     }
     return (
-        <div class="card w-full bg-base-100 shadow-xl product-card flex flex-col justify-between">
+        <div class="card w-full  shadow-xl product-card flex flex-col justify-between">
         <figure>
           {dUser.img? <div class="avatar online">
   <div class="w-24 rounded-full">

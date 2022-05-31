@@ -19,7 +19,7 @@ const MyPortfolio = () => {
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 justify-evenly">
-        <div class="m-10 lg:card-side bg-base-100 shadow-xl w-2/5">
+        <div class="m-10 lg:card-side  shadow-xl w-2/5">
           <figure>
             <img className="" src={hasan} />
           </figure>
@@ -207,7 +207,7 @@ const MyPortfolio = () => {
       <h2 className="text-center text-3xl">My Projects</h2>
       <div className="line w-24 mx-auto mt-1 mb-16"></div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        <div class="card w-full bg-base-100 shadow-xl">
+        <div class="card w-full  shadow-xl">
           <figure>
             <img src={project1} alt="Album" />
           </figure>
@@ -220,7 +220,7 @@ const MyPortfolio = () => {
           </div>
         </div>
         {/*  */}
-        <div class="card w-full bg-base-100 shadow-xl">
+        <div class="card w-full  shadow-xl">
           <figure>
             <img src={project2} alt="Album" />
           </figure>
@@ -232,7 +232,7 @@ const MyPortfolio = () => {
           </div>
         </div>
         {/*  */}
-        <div class="card w-full bg-base-100 shadow-xl">
+        <div class="card w-full  shadow-xl">
           <figure>
             <img src={project3} alt="Album" />
           </figure>
