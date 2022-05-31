@@ -34,3 +34,6 @@
     transform: rotate(360deg);
   }
 }
+.App, .App > *{
+  background-color: white;
+}
