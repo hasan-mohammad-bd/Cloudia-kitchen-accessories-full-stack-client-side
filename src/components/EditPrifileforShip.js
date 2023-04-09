@@ -30,11 +30,11 @@ const EditProfileForShip = () => {
 
           };
 
-          fetch(`https://radiant-lake-65921.herokuapp.com/profile/${user.email}`, {
+          fetch(`https://kitchen-accessroies-backend-production.up.railway.app/profile/${user.email}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-              "content-type": "application/json",
+              "content-type": "application/json",  
             },
             body: JSON.stringify(profile),
           })

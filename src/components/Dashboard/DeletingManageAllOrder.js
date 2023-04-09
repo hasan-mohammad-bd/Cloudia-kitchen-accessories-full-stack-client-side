@@ -6,7 +6,7 @@ const DeletingManageAllOrder = ({deletingProduct, setDeletingProduct, refetch}) 
 
     const handleDelete = () =>{
         const id = deletingProduct._id
-        const url = `https://radiant-lake-65921.herokuapp.com/book/${id}`
+        const url = `https://kitchen-accessroies-backend-production.up.railway.app/book/${id}`
         fetch(url, {
             method: 'DELETE',
             headers:{

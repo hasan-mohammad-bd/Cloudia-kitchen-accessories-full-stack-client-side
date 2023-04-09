@@ -37,7 +37,7 @@ const AddProduct = () => {
             img: img,
           };
 
-          fetch("https://radiant-lake-65921.herokuapp.com/product", {
+          fetch("https://kitchen-accessroies-backend-production.up.railway.app/product", {
             method: "POST",
             headers: {
               authorization: `Bearer ${localStorage.getItem('accessToken')}`,

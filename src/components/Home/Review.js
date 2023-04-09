@@ -6,7 +6,7 @@ import ReviewCard from "./ReviewCard";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://radiant-lake-65921.herokuapp.com/review")
+    fetch("https://kitchen-accessroies-backend-production.up.railway.app/review")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [reviews]);

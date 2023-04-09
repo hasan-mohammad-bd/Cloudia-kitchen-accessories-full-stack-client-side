@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
 
 
     useEffect(() => {
-        fetch('https://radiant-lake-65921.herokuapp.com/create-payment-intent', {
+        fetch('https://kitchen-accessroies-backend-production.up.railway.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://radiant-lake-65921.herokuapp.com/booking/${_id}`, {
+            fetch(`https://kitchen-accessroies-backend-production.up.railway.app/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

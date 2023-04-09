@@ -8,7 +8,7 @@ import Loading from '../Loading';
 const MyProfile = () => {
     const navigate = useNavigate()
     const [user, loading, error] = useAuthState(auth);
-    const {data: dUser, isLoading, refetch} = useQuery('myProfile', ()=> fetch(`https://radiant-lake-65921.herokuapp.com/user/${user.email}`,{
+    const {data: dUser, isLoading, refetch} = useQuery('myProfile', ()=> fetch(`https://kitchen-accessroies-backend-production.up.railway.app/user/${user.email}`,{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

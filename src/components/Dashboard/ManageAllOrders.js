@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
       isLoading,
       refetch,
     } = useQuery("allOrders", () =>
-      fetch(`https://radiant-lake-65921.herokuapp.com/book`,{
+      fetch(`https://kitchen-accessroies-backend-production.up.railway.app/book`,{
           method: 'GET',
           headers:{
               authorization: `Bearer ${localStorage.getItem('accessToken')}`

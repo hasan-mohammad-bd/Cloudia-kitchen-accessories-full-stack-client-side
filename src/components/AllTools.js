@@ -6,10 +6,10 @@ import {
   } from 'react-query';
 
 const AllTools = () => {
-    const {data:tools, isLoading, refetch} = useQuery('shopPorduct', ()=> fetch('https://radiant-lake-65921.herokuapp.com/product', {
+    const {data:tools, isLoading, refetch} = useQuery('shopPorduct', ()=> fetch('https://kitchen-accessroies-backend-production.up.railway.app/product', {
         method: 'GET',
         headers:{
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`,
         }
     }).then(res => res.json()))
 

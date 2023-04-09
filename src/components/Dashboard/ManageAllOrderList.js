@@ -7,7 +7,7 @@ const ManageAllOrderList = ({ order, index , setDeletingProduct, refetch }) => {
     const setStatus =()=>{
 
 
-        fetch(`https://radiant-lake-65921.herokuapp.com/status/${_id}`,{
+        fetch(`https://kitchen-accessroies-backend-production.up.railway.app/status/${_id}`,{
             method:'PATCH',
             headers:{
                 'content-type': 'application/json',

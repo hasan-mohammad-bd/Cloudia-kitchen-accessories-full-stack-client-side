@@ -10,7 +10,7 @@ const useToken = user => {
             email: email     
         };
         if(email){
-            fetch(`https://radiant-lake-65921.herokuapp.com/user/${email}`, {
+            fetch(`https://kitchen-accessroies-backend-production.up.railway.app/user/${email}`, {
                 method:'PUT',
                 headers: {
                     'content-type': 'application/json',

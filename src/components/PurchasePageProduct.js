@@ -22,7 +22,7 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
     data: purchaeUser,
     isLoading,
   } = useQuery("purchaseProfile", () =>
-    fetch(`https://radiant-lake-65921.herokuapp.com/user/${user.email}`, {
+    fetch(`https://kitchen-accessroies-backend-production.up.railway.app/user/${user.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -65,7 +65,7 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
             phone: purchaeUser.phone,
           };
 
-          fetch(`https://radiant-lake-65921.herokuapp.com/book`, {
+          fetch(`https://kitchen-accessroies-backend-production.up.railway.app/book`, {
             method: "POST",
             headers: {
               authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -85,7 +85,7 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
 
 
 
-                fetch(`https://radiant-lake-65921.herokuapp.com/productQuantity/${_id}`,{
+                fetch(`https://kitchen-accessroies-backend-production.up.railway.app/productQuantity/${_id}`,{
                     method:'PUT',
                     headers:{
                         'content-type': 'application/json',

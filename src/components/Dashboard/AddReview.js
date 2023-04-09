@@ -32,7 +32,7 @@ const AddReview = () => {
                 img: img,
               };
     
-              fetch("https://radiant-lake-65921.herokuapp.com/review", {
+              fetch("https://kitchen-accessroies-backend-production.up.railway.app/review", {
                 method: "POST",
                 headers: {
                   authorization: `Bearer ${localStorage.getItem('accessToken')}`,

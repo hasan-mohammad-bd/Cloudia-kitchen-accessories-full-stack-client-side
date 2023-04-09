@@ -14,7 +14,7 @@ const MyOrder = () => {
       isLoading,
       refetch,
     } = useQuery("myOrderList", () =>
-      fetch(`https://radiant-lake-65921.herokuapp.com/book/${user.email}`,{
+      fetch(`https://kitchen-accessroies-backend-production.up.railway.app/book/${user.email}`,{
           method: 'GET',
           headers:{
               authorization: `Bearer ${localStorage.getItem('accessToken')}`

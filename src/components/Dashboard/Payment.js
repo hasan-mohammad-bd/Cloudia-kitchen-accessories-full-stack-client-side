@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L0km2DvpcSfFbldZpHNo418SREG3o5oy78wO
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `https://radiant-lake-65921.herokuapp.com/booking/${id}`;
+    const url = `https://kitchen-accessroies-backend-production.up.railway.app/booking/${id}`;
 
     const { data: order, isLoading } = useQuery(['booking', id], () => fetch(url, {
         method: 'GET',

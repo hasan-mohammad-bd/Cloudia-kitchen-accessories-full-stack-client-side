@@ -13,12 +13,12 @@ const MakeAdmin = () => {
 
 
   useEffect(()=>{
-    fetch(`https://radiant-lake-65921.herokuapp.com/user/${user.email}`)
+    fetch(`https://kitchen-accessroies-backend-production.up.railway.app/user/${user.email}`)
     .then(res => res.json())
     .then(userData => setSingleUser(userData))
   },[user])
 
-    const {data:allUsers, isLoading, refetch, isFetching} = useQuery(['adminPage',{cacheTimes: 50}, user.email], ()=> fetch('https://radiant-lake-65921.herokuapp.com/user',{
+    const {data:allUsers, isLoading, refetch, isFetching} = useQuery(['adminPage',{cacheTimes: 50}, user.email], ()=> fetch('https://kitchen-accessroies-backend-production.up.railway.app/user',{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
