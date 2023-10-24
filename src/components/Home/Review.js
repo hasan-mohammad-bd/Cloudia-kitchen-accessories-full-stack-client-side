@@ -6,7 +6,7 @@ import ReviewCard from "./ReviewCard";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://kitchen-accessroies-backend-production.up.railway.app/review")
+    fetch("https://kithen.onrender.com/review")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [reviews]);

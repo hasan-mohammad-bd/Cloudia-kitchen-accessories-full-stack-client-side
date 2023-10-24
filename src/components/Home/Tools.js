@@ -12,7 +12,7 @@ import Loading from '../Loading';
 
 const Tools = () => {
 
-    const {data:tools, isLoading, refetch} = useQuery('homeProduct', ()=> fetch('https://kitchen-accessroies-backend-production.up.railway.app/product').then(res => res.json()))
+    const {data:tools, isLoading, refetch} = useQuery('homeProduct', ()=> fetch('https://kithen.onrender.com/product').then(res => res.json()))
 
 
     if(isLoading){

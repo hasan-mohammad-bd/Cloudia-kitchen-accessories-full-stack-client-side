@@ -37,7 +37,7 @@ const AddProduct = () => {
             img: img,
           };
 
-          fetch("https://kitchen-accessroies-backend-production.up.railway.app/product", {
+          fetch("https://kithen.onrender.com/product", {
             method: "POST",
             headers: {
               authorization: `Bearer ${localStorage.getItem('accessToken')}`,

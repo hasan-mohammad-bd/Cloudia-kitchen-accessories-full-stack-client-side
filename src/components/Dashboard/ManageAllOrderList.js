@@ -7,7 +7,7 @@ const ManageAllOrderList = ({ order, index , setDeletingProduct, refetch }) => {
     const setStatus =()=>{
 
 
-        fetch(`https://kitchen-accessroies-backend-production.up.railway.app/status/${_id}`,{
+        fetch(`https://kithen.onrender.com/status/${_id}`,{
             method:'PATCH',
             headers:{
                 'content-type': 'application/json',

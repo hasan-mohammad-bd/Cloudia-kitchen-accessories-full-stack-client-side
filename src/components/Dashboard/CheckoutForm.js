@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
 
 
     useEffect(() => {
-        fetch('https://kitchen-accessroies-backend-production.up.railway.app/create-payment-intent', {
+        fetch('https://kithen.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://kitchen-accessroies-backend-production.up.railway.app/booking/${_id}`, {
+            fetch(`https://kithen.onrender.com/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

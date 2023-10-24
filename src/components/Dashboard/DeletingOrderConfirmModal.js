@@ -6,7 +6,7 @@ const DeletingOrderConfirmModal = ({deletingProduct, setDeletingProduct, refetch
 
     const handleDelete = () =>{
         const id = deletingProduct._id
-        const url = `https://kitchen-accessroies-backend-production.up.railway.app/book/${id}`
+        const url = `https://kithen.onrender.com/book/${id}`
         fetch(url, {
             method: 'DELETE',
             headers:{

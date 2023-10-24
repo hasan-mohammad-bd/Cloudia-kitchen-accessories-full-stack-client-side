@@ -5,7 +5,7 @@ const MakeAdminList = ({ index, sUser, refetch, singleUser }) => {
 
   const { email, role } = sUser;
   const makeAdmin =()=>{
-    fetch(`https://kitchen-accessroies-backend-production.up.railway.app/user/admin/${email}`,{
+    fetch(`https://kithen.onrender.com/user/admin/${email}`,{
         method:'PUT',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -27,7 +27,7 @@ const MakeAdminList = ({ index, sUser, refetch, singleUser }) => {
     })
 }
   const removeAdmin =()=>{
-    fetch(`https://kitchen-accessroies-backend-production.up.railway.app/user/adminRemove/${email}`,{
+    fetch(`https://kithen.onrender.com/user/adminRemove/${email}`,{
         method:'PUT',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

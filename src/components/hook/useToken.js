@@ -10,7 +10,7 @@ const useToken = user => {
             email: email     
         };
         if(email){
-            fetch(`https://kitchen-accessroies-backend-production.up.railway.app/user/${email}`, {
+            fetch(`https://kithen.onrender.com/user/${email}`, {
                 method:'PUT',
                 headers: {
                     'content-type': 'application/json',

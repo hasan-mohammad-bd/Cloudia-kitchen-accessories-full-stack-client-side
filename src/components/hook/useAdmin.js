@@ -7,7 +7,7 @@ const useAdmin = user => {
     useEffect(()=>{
         const email = user?.email;
         if(email){
-            fetch(`https://kitchen-accessroies-backend-production.up.railway.app/admin/${email}`, {
+            fetch(`https://kithen.onrender.com/admin/${email}`, {
                 method:'GET',
                 headers: {
                     'content-type': 'application/json',

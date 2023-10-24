@@ -6,7 +6,7 @@ import PurchasePageProduct from './PurchasePageProduct';
 
 const Purchase = () => {
     const {id} = useParams()
-    const {data: product, isLoading, refetch} = useQuery('purchaseProduct', ()=> fetch(`https://kitchen-accessroies-backend-production.up.railway.app/product/${id}`,{
+    const {data: product, isLoading, refetch} = useQuery('purchaseProduct', ()=> fetch(`https://kithen.onrender.com/product/${id}`,{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -14,7 +14,7 @@ const MyOrder = () => {
       isLoading,
       refetch,
     } = useQuery("myOrderList", () =>
-      fetch(`https://kitchen-accessroies-backend-production.up.railway.app/book/${user.email}`,{
+      fetch(`https://kithen.onrender.com/book/${user.email}`,{
           method: 'GET',
           headers:{
               authorization: `Bearer ${localStorage.getItem('accessToken')}`

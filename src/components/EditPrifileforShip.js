@@ -30,7 +30,7 @@ const EditProfileForShip = () => {
 
           };
 
-          fetch(`https://kitchen-accessroies-backend-production.up.railway.app/profile/${user.email}`, {
+          fetch(`https://kithen.onrender.com/profile/${user.email}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`,

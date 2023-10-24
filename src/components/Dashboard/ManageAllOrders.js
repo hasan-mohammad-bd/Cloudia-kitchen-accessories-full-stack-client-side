@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
       isLoading,
       refetch,
     } = useQuery("allOrders", () =>
-      fetch(`https://kitchen-accessroies-backend-production.up.railway.app/book`,{
+      fetch(`https://kithen.onrender.com/book`,{
           method: 'GET',
           headers:{
               authorization: `Bearer ${localStorage.getItem('accessToken')}`

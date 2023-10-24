@@ -13,12 +13,12 @@ const MakeAdmin = () => {
 
 
   useEffect(()=>{
-    fetch(`https://kitchen-accessroies-backend-production.up.railway.app/user/${user.email}`)
+    fetch(`https://kithen.onrender.com/user/${user.email}`)
     .then(res => res.json())
     .then(userData => setSingleUser(userData))
   },[user])
 
-    const {data:allUsers, isLoading, refetch, isFetching} = useQuery(['adminPage',{cacheTimes: 50}, user.email], ()=> fetch('https://kitchen-accessroies-backend-production.up.railway.app/user',{
+    const {data:allUsers, isLoading, refetch, isFetching} = useQuery(['adminPage',{cacheTimes: 50}, user.email], ()=> fetch('https://kithen.onrender.com/user',{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

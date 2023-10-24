@@ -6,7 +6,7 @@ import {
   } from 'react-query';
 
 const AllTools = () => {
-    const {data:tools, isLoading, refetch} = useQuery('shopPorduct', ()=> fetch('https://kitchen-accessroies-backend-production.up.railway.app/product', {
+    const {data:tools, isLoading, refetch} = useQuery('shopPorduct', ()=> fetch('https://kithen.onrender.com/product', {
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`,

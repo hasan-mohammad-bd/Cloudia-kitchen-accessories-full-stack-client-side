@@ -32,7 +32,7 @@ const AddReview = () => {
                 img: img,
               };
     
-              fetch("https://kitchen-accessroies-backend-production.up.railway.app/review", {
+              fetch("https://kithen.onrender.com/review", {
                 method: "POST",
                 headers: {
                   authorization: `Bearer ${localStorage.getItem('accessToken')}`,

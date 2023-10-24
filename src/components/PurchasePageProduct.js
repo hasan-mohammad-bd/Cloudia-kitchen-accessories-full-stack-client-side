@@ -22,7 +22,7 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
     data: purchaeUser,
     isLoading,
   } = useQuery("purchaseProfile", () =>
-    fetch(`https://kitchen-accessroies-backend-production.up.railway.app/user/${user.email}`, {
+    fetch(`https://kithen.onrender.com/user/${user.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -65,7 +65,7 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
             phone: purchaeUser.phone,
           };
 
-          fetch(`https://kitchen-accessroies-backend-production.up.railway.app/book`, {
+          fetch(`https://kithen.onrender.com/book`, {
             method: "POST",
             headers: {
               authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -85,7 +85,7 @@ const PurchasePageProduct = ({ product, id ,refetch}) => {
 
 
 
-                fetch(`https://kitchen-accessroies-backend-production.up.railway.app/productQuantity/${_id}`,{
+                fetch(`https://kithen.onrender.com/productQuantity/${_id}`,{
                     method:'PUT',
                     headers:{
                         'content-type': 'application/json',
